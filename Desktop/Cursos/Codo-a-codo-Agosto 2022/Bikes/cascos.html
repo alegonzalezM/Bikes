@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="estilos/estilosBikers.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.30/vue.global.min.js"> </script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt&family=Questrial&&display=swap&family=Maitree:wght@600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>bikeShop cascos</title>
+</head>
+
+<body>
+<header>
+<div id="cabecera">
+<!--acá va la cabecera-->
+</div>
+<div class="row" id="row_exp" >
+<!--acá va la barra de naveg-->	
+</div>
+</header>
+<aside>
+<div class="aside">
+<p >Lorem ipsum dolor sonsectetur adipisicing elit. Maxime modi aliquid sunt, reprehenderit nobis itaque consequuntur tempore non perferendis, quis, ab expedita earum laborum, laudantium aperiam accusamus a ist </p>
+<img src="imagenes/casco-tec.JPG" alt="">
+<p>onsectetur adipisicing elit. Maxime modi aliquid sunt, reprehenderit nobis itaque consequuntur tempore non perferendis, quis, ab expedita earum laborum, laudantium aperiam accusamus a ist </p>
+<img src="imagenes/casco-tec2.JPG" alt="">
+<p>onsectetur adipisicing elit. Maxime modi aliquid sunt, reprehenderit nobis itaque consequuntur tempore non perferendis, quis, ab expedita earum laborum, laudantium aperiam accusamus a ist </p>
+</div>
+</aside>
+<main>
+<div class="row">
+<div class="contenedor-cascos">
+<div id="divVue">
+	<div class="card" v-for="casco in cascos">
+          <img class="card-img-top" :src="casco.imagen" alt="foto" style="width:98%">
+          <div class="card-body">
+            <h4 class="card-title">{{casco.nombre}}</h4>
+            <p class="card-text">{{casco.descripcion}}</p>
+          <!--  <a href="#" class="btn btn-primary">Ver Producto</a>-->
+          </div>
+        </div>
+	 	</div>
+	</div></div>
+</main>
+
+<footer>
+<div id="footer"></div>
+<script src="estilos/elementos.js"></script>
+</footer>
+
+</body>
+</html>

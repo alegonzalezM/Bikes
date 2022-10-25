@@ -32,7 +32,7 @@ var nav=
 					</ul></li>
 				<li><a href="#">ACCESORIOS</a>
 					<ul class="lista-menu">		
-						<li><a href="#">Cascos</a></li>
+						<li><a href="cascos.html">Cascos</a></li>
 						<li><a href="#">Luces</a></li>
 						<li><a href="#">Indumentaria</a></li>
 					</ul></li>
@@ -40,7 +40,7 @@ var nav=
 					<ul class="lista-menu">
 						<li><a href="#">Siete Lagos</a></li>
 						<li><a href="#">Altas Cumbres</a></li>
-						<li><a href="#">Inscripción</a></li>
+						<li><a href="formulario.html">Inscripción</a></li>
 						
 					</ul></li>
 				<li><a href="contacto.html">CONTACTO</a></li>
@@ -65,11 +65,54 @@ var miFooter= `<div class="contenedor_footer"><p></p><p>Av Cordoba 3333 - CABA <
 		<a href="#"><i class="fa fa-map-marker fa-2x"></i></a>
 	    <a href="mailto:bikeshop@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
 </div></div>
-`
+`;
 
 	
 
 document.getElementById("footer").innerHTML=miFooter;
 
-//----------------------------------------------------
+
+//-----------------------------------------------------------------------
+ const codVue= Vue.createApp({      
+  data(){
+	  return{
+    cascos:[
+      {codigo:"1",
+      imagen:"imagenes/casco1.jpg",
+      nombre:"Casco Bell",
+      descripcion:"Texto descriptivo"
+      },
+      {codigo:"2",
+      imagen:"imagenes/casco2.jpg",
+      nombre:"Cacso MTB",
+      descripcion:"Texto descriptivo"
+      }, 
+	  {codigo:"1",
+      imagen:"imagenes/casco1.jpg",
+      nombre:"Casco Bell",
+      descripcion:"Texto descriptivo"
+      },
+      {codigo:"2",
+      imagen:"imagenes/casco2.jpg",
+      nombre:"Cacso MTB",
+      descripcion:"Texto descriptivo"
+      }, 
+	 {codigo:"2",
+      imagen:"imagenes/casco2.jpg",
+      nombre:"Cacso MTB",
+      descripcion:"Texto descriptivo"
+      }, 
+	  {codigo:"1",
+      imagen:"imagenes/casco1.jpg",
+      nombre:"Casco Bell",
+      descripcion:"Texto descriptivo"
+      },
+        
+    ],
+    
+ 
+  }}
+}).mount("#divVue");
+//-------------------------------------------------------------
+
 

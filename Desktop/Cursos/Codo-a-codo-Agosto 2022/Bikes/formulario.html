@@ -5,83 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bike Shop</title>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" type="text/css" href="estilos/formulario.css"/>
-<link rel="stylesheet" type="text/css" href="estilos/estilosBikers.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt&family=Questrial&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt&family=Questrial&&display=swap&family=Maitree:wght@600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.30/vue.global.min.js"> </script>
+<link rel="stylesheet" type="text/css" href="estilos/estilosBikers.css">
+<style>
+table{
+	dsiplay:table;
+	flex-direction: column;
+	}	   
+</style>
 </head>
 <body>
 <header>
-<div id="cabecera">
 
-<div class="grid-row">
-<div class="div-row"></div>
-<div id="div-row" ><img src="imagenes/bike-shop-logo.png" id="logo" alt="logo">
-</div>
-<div class="div-row" >
-<div class="contenedor-redes">
-	
-		<a href="#"><img src="imagenes/instagram.png" alt="instagram" ></a>
-		<a href="#"><img src="imagenes/wapp-n.png" alt=""></a>
-		<a href="#"><img src="imagenes/twitter-ch.png" alt=""></a>
-		<a href="mailto:alegonzalez24@hotmail.com"><img src="imagenes/email-ch.png" alt=""></a>
-	</div></div></div>
-<div class="row" id="row_exp" >
-	</div></div>
 </header>
-<h2>Formulario de inscripción: </h2>
-<div class="contenedor">
-	<div class="row" >
-		<div class="col-3">
-		<label>Nombre : </label>
+<main>
+<button id="boton-inicio" ><a href="index.html" >VOLVER A INICIO </a></button>											 
+<h2 id="titulo-form" class= "pl-4 mt-3" >Formulario de inscripción: </h2>
+<div class="container-sm bg-light ml-5" id="fila-form">
+	<form  class=""  action="/mostrarDatos.html" method="post" id="formularioInscripcion" >
+   <div class="mr-0">
+   <div class="input-group mb-3 ml-0 col-9" >
+    <span class="input-group-text  mr-3" >Participante</span><br>
+   <input type="text" class="form-control mr-4" id="nombreForm" tabindex="1" maxlength=50  placeholder="Nombre"  required>
+    <input type="text" class="form-control" tabindex="2" maxlength=50 id="apellidoForm" placeholder="Apellido" required>
+  </div>
+    <label for="  ">Domicilio :</label>
+    <input type="text" class="form-control col-6 ml-3 " tabindex="3" id="domicilio" maxlength=50 placeholder="Ingresa domicilio" name="domicilio" required><br>
+     <label for="email">Email:</label>
+    <input type="email" class="form-control col-6 ml-3" id="email" tabindex="4" maxlength=50 placeholder="Ingresa email" name="email" required>
+	</div>
+   <div class="mb-3 col-3">
+    <label for="edad">Edad: </label>
+    <input type="number" class="form-control-xs m-3"  min="16" max="90" tabindex="5" id="edad"  placeholder="" name="edad" required>
+	   <br></div>
+	 <div class="input-group mb-3">
+	<label class="input-group-text" for="inputGroupSelect01">Elige tu desafío: </label>
+  <select class="form-select" tabindex=6 id="inputGroupSelect01" >
+    <option selected >Choose...</option>
+    <option value="1">1. Altas Cumbres</option>
+    <option value="2">2. Desafío de los 7 lagos</option>
+    <option value="3">3. Vuelta de los esteros</option>
+	 <option value="3">4. BMX Race</option>
+  </select>
+	   </div>
+	<br>
+	<label for="comment">Comentarios:</label><br>
+	<textarea class="form-control-md ml-4 " rows="6" maxlength="300"  tabindex="7" style="min-width:30%" id="comentarios" name="text"></textarea>
+   <div class="form-check mb-3">
+   <label class="form-check-label"></label>
+<script>
+//Funcion para darle el foco an formulario campo nombre
+document.getElementById("nombreForm").focus();	
+</script>
+<script>
+//funcion para mostrar datoss del formulario
+
+function mostrar() {
+	
+	
+    var reg_1=document.getElementById("nombreForm");
+    var reg_2=document.getElementById("apellidoForm");
+    var reg_3=document.getElementById("domicilio");
+	var reg_4=document.getElementById("email");
+	var reg_5=document.getElementById("edad");
+	var reg_6=document.getElementById("cometarios");
+	
+
+ document.write(
+	 
+	 "<table cellpadding='5' cellspacing='0' border='1'>" +
+    "<tr><td>NOMBRE</td><td>APELLIDO</td><td>DOMICILIO</td><td>EMAIL</td><td>EDAD</td><td>COMENTARIOS</td></tr>"+
+    "<tr><td>"+nombreForm.value+"</td><td>"+apellidoForm.value+"</td><td>"+domicilio.value+
+	 "</td><td>"+email.value+"</td><td>"+edad.value+"</td><td>"+comentarios.value+"</td></tr></table>"
+    );
+}
+
+</script>
+
+
+<button type="submit" onclick= "mostrar()" target="_blank" tabindex="8" class="btn btn-dark text-light ">ENVIAR</button>
 		</div>
-		<div class="col-9">
-		<input type="text"  required placeholder="Ingresa tu nombre..." name="nombre">
-		</div></div>
-	<div class="row">
-		<div class="col-3">
-		<label>Apellido : </label>
-		</div>
-		<div class="col-9">
-		<input type="text" required placeholder="Ingresa tu apellido..." class="">
-		</div></div>
-	<div class="row">
-		<div class="col-3">
-		<label>Edad : </label>
-		</div>
-		<div class="col-9">
-		<input type="radio" >18/ 25 <br>
-		<input type="radio">26 /35 <br>
-		<input type="radio">36 /45 <br>
-		<input type="radio">45 / 70 <br>
-		</div></div>
-	<div class="row">
-		<div class="col-3"><label>Elige evento: </label>
-		</div>
-		<div class="col-9">
- 		<select id="lugar" name="lugar">
- 		 <option value="AC">Altas Cumbres</option>
- 		 <option value="ME">Merlo</option>
- 		 <option value="BA">Bariloche</option>	
-		</select>
-		</div></div>
-	<div class="row">
-		<div class="col-3">
-		<label>Dejanos tus comentarios</label>
-		<div class="col-9">
-		<textarea >Ingresa comentario acá</textarea>
-		</div></div>
-	<div class="row">
-		<div class="col-9">
-		</div>
-		<div class="col-3">
-		<input type="reset" value="Reset">
-		<input type="submit" value="Submit">	
-		</div></div>
-	</div></div>
-<script src="estilos/elementos.js"></script>	
+	   </form>
+</div>	
+
+	
+</main>
+
+<footer id="footer">
+</footer>	
+
 </body>
 </html>
